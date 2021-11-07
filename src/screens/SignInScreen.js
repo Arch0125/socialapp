@@ -1,39 +1,31 @@
-import React, { useState } from 'react'
-import { View, Text,StyleSheet,TextInput } from 'react-native'
-import { TouchableOpacity } from 'react-native-gesture-handler'
-import SignUpScreen from './SignUpScreen'
+import { NavigationContainer } from '@react-navigation/native'
+import React from 'react'
+import { View, Text,StyleSheet,TextInput,TouchableOpacity } from 'react-native'
 
 const SignInScreen = ({navigation}) => {
-
-    const[email,setEmail]=useState()
-    const[password,setPassword]=useState()
-
     return (
         <View style={styles.container} >
-            <Text style={styles.heading} >Welcome Back</Text>
+            <Text style={styles.heading} >Welcome back</Text>
             <Text style={styles.subtitle}> Sign in to continue </Text>
+            
+            
+
             <View style={{paddingTop:"15%",marginLeft:"15%",marginRight:"15%"}} >
                 <Text style={styles.inputtitle} >EMAIL</Text>
-                <TextInput style={styles.input}
-                onChangeText={email => setEmail(email.trim())}
-                value={email}
-                />
+                <TextInput style={styles.input} />
             </View>
 
             <View style={{paddingTop:"15%",marginLeft:"15%",marginRight:"15%"}} >
                 <Text style={styles.inputtitle} >PASSWORD</Text>
-                <TextInput style={styles.input} secureTextEntry
-                onChangeText={password => setPassword(password.trim())}
-                value={password}
-                />
+                <TextInput style={styles.input} secureTextEntry />
             </View>
 
             <TouchableOpacity style={styles.button} >
-                <Text style={{color:"#FFF", fontSize:15}} >Sign In</Text>
+                <Text style={{color:"#FFF", fontSize:15}} >Sign Up</Text>
             </TouchableOpacity>
 
             <TouchableOpacity onPress={() => navigation.navigate("SignUp")} style={{marginTop:"50%",alignSelf:"center"}} >
-                <Text  >New to Socially ?<Text style={{color:"#51a0d5"}}  > Sign Up</Text> </Text>
+                <Text  >New to Socially ?<Text style={{color:"#51a0d5"}}> Sign Up</Text> </Text>
             </TouchableOpacity>
         </View>
     )
@@ -79,7 +71,7 @@ const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
         backgroundColor:"#123966",
-        height:"75%",
+        height:"5%",
         width:"65%",
         borderRadius:10,
         
